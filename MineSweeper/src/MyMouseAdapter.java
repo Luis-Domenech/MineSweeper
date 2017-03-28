@@ -131,8 +131,8 @@ public class MyMouseAdapter extends MouseAdapter {
 			myPanel.repaint();
 			break;
 		case 3:		//Right mouse button
-			if ((myPanel.mouseDownGridX != -1) && (myPanel.mouseDownGridY != -1) && (myPanel.mouseDownGridX == gridX) && (myPanel.mouseDownGridY == gridY)) {
-				if (myPanel.colorArray[gridX][gridY] != Color.RED && myPanel.colorArray[gridX][gridY] != Color.GRAY)
+			if ((gridX != -1) && (gridY != -1)) {
+				if (myPanel.colorArray[gridX][gridY] == Color.WHITE)
 				{
 					myPanel.colorArray[gridX][gridY] = Color.RED;
 				}
@@ -141,6 +141,7 @@ public class MyMouseAdapter extends MouseAdapter {
 					myPanel.colorArray[gridX][gridY] = Color.WHITE;
 				}
 			} 
+			myPanel.repaint();
 			break;
 			default:    //Some other button (2 = Middle mouse button, etc.)
 			//Do nothing
